@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Issue list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Number</th>
+                <th>Datepublication</th>
+                <th>Cover</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for issue in issues %}
+            <tr>
+                <td><a href="{{ path('issue_show', { 'id': issue.id }) }}">{{ issue.id }}</a></td>
+                <td>{{ issue.number }}</td>
+                <td>{% if issue.datePublication %}{{ issue.datePublication|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ issue.cover }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('issue_show', { 'id': issue.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('issue_edit', { 'id': issue.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('issue_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

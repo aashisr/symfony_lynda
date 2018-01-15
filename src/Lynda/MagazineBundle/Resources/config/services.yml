@@ -1,0 +1,4 @@
+services:
+#    lynda_magazine.example:
+#        class: Lynda\MagazineBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,4 +1,5 @@
-h1.Interacting with Entity Manager
+Interacting with Entity Manager
+===============================
 
 Doctrine provides both the models and the work of persisting data, or practically speaking, what interface do we use? Doctrine's Entity Manager is the answer, which handles the persistence of entities, including the storage and retrieval of records within the database. Within the controller, the entity manager is accessed via a shortcut to the Doctrine service. It's easy to just assign it into a variable like em equals this for the controller, get Doctrine for the Doctrine registry service, then get manager to get the Entity Manager.
 

@@ -24,10 +24,13 @@ class PublicationController extends Controller
      */
     public function indexAction()
     {
+        //Assigns em to the instance of an entity manager
         $em = $this->getDoctrine()->getManager();
 
+        //Assigns variable publications to a change command
         $publications = $em->getRepository('LyndaMagazineBundle:Publication')->findAll();
 
+        //Sends data view template
         return $this->render('publication/index.html.twig', array(
             'publications' => $publications,
         ));

@@ -182,13 +182,13 @@ class Issue
     //Create helper for absolute path
 
     /**
-     * Grt absolute path to upload directory
+     * Get absolute path to upload directory
      *
      * @return string
      *  Absolute path
      */
     protected function getUploadAbsolutePath(){
-        return __DIR__ . '/../../../../web' . $this->getUploadPath();
+        return __DIR__ . '/../../../../web/' . $this->getUploadPath();
     }
 
     //Make easy to render

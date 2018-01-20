@@ -46,6 +46,8 @@ class IssueController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //Upload file
+            $issue->upload();
             $em = $this->getDoctrine()->getManager();
             $em->persist($issue);
             $em->flush();
@@ -88,6 +90,8 @@ class IssueController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            //Upload file
+            $issue->upload();
             $em = $this->getDoctrine()->getManager();
             $em->persist($issue);
             $em->flush();

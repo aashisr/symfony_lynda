@@ -16,9 +16,16 @@ class IssueType extends AbstractType
     {
         $builder
             ->add('number')
-            ->add('datePublication', 'date')
-            ->add('cover')
-            ->add('publication')
+            ->add('datePublication', 'date', array(
+                'years' => range(date('Y'), date('Y', strtotime('-50 years'))),
+                'required' => TRUE,
+            ))
+            ->add('file')
+                //Publication is an entity
+            ->add('publication', 'entity', array(
+                'required' => TRUE,
+                'class' => 'LyndaMagazineBundle:Publication',
+            ))
         ;
     }
     

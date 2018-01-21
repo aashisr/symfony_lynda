@@ -122,7 +122,6 @@ class IssueController extends Controller
             $em->remove($issue);
             $em->flush();
         }
-
         return $this->redirectToRoute('issue_index');
     }
 
